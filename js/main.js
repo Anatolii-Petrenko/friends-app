@@ -10,7 +10,6 @@ import {
 import { showCards } from './showCards.js';
 import { showGeneratedFilters } from './showGeneratedFilters.js';
 
-
 (async () => {
   document.querySelector('.loader-container').classList.add('hidden');
 
@@ -47,13 +46,13 @@ import { showGeneratedFilters } from './showGeneratedFilters.js';
       });
     }
 
-    e.target.addEventListener('change', () => {
-      filterHandler(cardsData);
+    e.target.addEventListener('change', e => {
+      filterHandler(cardsData, e.target.name);
     });
   }
 
   //Search people by FirstName|LastName
-  function filterHandler(data) {
+  function filterHandler(data, sortType = '') {
     //For Search
     const searchInputData = domElements.search.value;
     //For Filters
@@ -77,13 +76,25 @@ import { showGeneratedFilters } from './showGeneratedFilters.js';
       filteredCardsData
     );
 
-    filteredCardsData = sortByName(
-      filteredCardsData,
-      'firstName',
-      sortByNameValue
-    );
+    if (sortType === domElements.sort.name.name) {
+      filteredCardsData = sortByAge(filteredCardsData, 'age', sortByAgeValue);
 
-    filteredCardsData = sortByAge(filteredCardsData, 'age', sortByAgeValue);
+      filteredCardsData = sortByName(
+        filteredCardsData,
+        'firstName',
+        sortByNameValue
+      );
+    }
+
+    if (sortType === domElements.sort.age.name) {
+      filteredCardsData = sortByName(
+        filteredCardsData,
+        'firstName',
+        sortByNameValue
+      );
+
+      filteredCardsData = sortByAge(filteredCardsData, 'age', sortByAgeValue);
+    }
 
     showCards(domElements.blockMain, filteredCardsData);
   }
