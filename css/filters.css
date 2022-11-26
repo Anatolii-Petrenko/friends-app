@@ -1,0 +1,142 @@
+:root {
+  --hovered-filter-fieldset: #6c9bd930;
+
+  --reset-btn-bg: #ffbfb2;
+  --hovered-reset-btn-bg: #fda493;
+  --active-reset-btn-bg: #fe937e;
+}
+
+/* Search */
+.search {
+  flex: 1 1 auto;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 90%;
+  height: 30px;
+  background-color: var(--main-bg-color);
+  border-radius: 6px;
+  border: 1px solid black;
+  padding: 0px 10px;
+}
+
+/* Filters */
+.filters {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+  grid-template-areas: 'sort-name sort-age filter-gender filter-country reset-filters';
+  gap: 10px;
+  justify-content: center;
+}
+
+#sort-by-name-fieldset {
+  grid-area: sort-name;
+}
+#sort-by-age-fieldset {
+  grid-area: sort-age;
+}
+#filter-gender-fieldset {
+  grid-area: filter-gender;
+}
+#filter-country-fieldset {
+  grid-area: filter-country;
+}
+#reset-filters-btn {
+  grid-area: reset-filters;
+}
+
+.filters__filter {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 6px;
+}
+.filters__filter:hover {
+  background-color: var(--hovered-filter-fieldset);
+  box-shadow: 1px 1px 10px var(--active-card-box-shadow);
+  transition: all 0.3s;
+}
+
+.filters__filter:hover,
+.filters__filter-select:hover {
+  cursor: context-menu;
+}
+
+.filters__filter-legend {
+  font-size: 0.8em;
+}
+.filters__filter-select {
+  width: 100%;
+  background: none;
+}
+
+.filters__reset-btn-wrapper {
+  padding-top: 4px;
+  margin: 0 auto;
+}
+
+.filters__reset-all-btn {
+  background-color: var(--reset-btn-bg);
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 6px;
+  height: 41px;
+  text-transform: uppercase;
+}
+
+.filters__reset-all-btn:hover {
+  background-color: var(--hovered-reset-btn-bg);
+  box-shadow: 1px 1px 10px var(--active-card-box-shadow);
+  transition: all 0.2s;
+}
+
+.filters__reset-all-btn:active {
+  transform: scale(1.02);
+  transition: 0.1s;
+  background-color: var(--active-reset-btn-bg);
+  box-shadow: 1px 1px 10px var(--active-card-box-shadow);
+}
+
+@media (max-width: 970px) {
+  .filters {
+    grid-template-columns: repeat(4, minmax(160px, 220px));
+    align-content: center;
+    grid-template-areas:
+      'sort-name sort-age filter-gender filter-country'
+      'reset-filters reset-filters reset-filters reset-filters';
+  }
+  #reset-filters-btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 770px) {
+  .filters {
+    grid-template-columns: repeat(3, minmax(160px, 220px));
+    align-content: center;
+    grid-template-areas:
+      'sort-name sort-age reset-filters'
+      'filter-gender filter-country reset-filters';
+  }
+  #reset-filters-btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .filters {
+    grid-template-columns: repeat(2, minmax(160px, 220px));
+    align-content: center;
+    grid-template-areas:
+      'sort-name sort-age'
+      'filter-gender filter-country'
+      'reset-filters reset-filters';
+  }
+
+  .search {
+    margin-top: 12px;
+  }
+}

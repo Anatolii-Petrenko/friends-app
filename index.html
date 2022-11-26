@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Friends-app</title>
+</head>
+
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" display="none">
+		<!-- Card Phone icon -->
+		<symbol id="telephone" viewBox="0 0 16 16">
+			<path fill-rule="evenodd"
+				d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+		</symbol>
+		<!-- Card Location icon -->
+		<symbol id="location" viewBox="0 0 16 16">
+			<path fill-rule="evenodd"
+				d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+			<path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+		</symbol>
+	</svg>
+	<!-- Loader -->
+	<div class="loader-container">
+		<div class="loader"></div>
+	</div>
+	<!-- Main content -->
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__title-container">
+				<h1 class="header__title">
+					<span class="header__title-text-p1">Friends</span>
+					<span class="header__title-text-p2">App</span>
+				</h1>
+				<nav class="search">
+					<input id="search" class="search-input" type="text" placeholder="Find friend">
+				</nav>
+			</div>
+			<nav class="filters">
+				<fieldset class="filters__filter" id="sort-by-name-fieldset">
+					<legend class="filters__filter-legend">Sort by Name</legend>
+					<select class="filters__filter-select" id="sort-by-name" name="firstName">
+						<option value="default">Default</option>
+						<option value="a-z">A -> Z</option>
+						<option value="z-a">Z -> A</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="filters__filter" id="sort-by-age-fieldset">
+					<legend class="filters__filter-legend">Sort by Age</legend>
+					<select class="filters__filter-select" id="sort-by-age" name="age">
+						<option value="default">Default</option>
+						<option value="min-max">Min -> Max</option>
+						<option value="max-min">Max -> Min</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="filters__filter" id="filter-gender-fieldset">
+					<legend class="filters__filter-legend">Gender</legend>
+					<select class="filters__filter-select" id="filter-gender" name="gender">
+						<option value="">All</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</fieldset>
+				<fieldset class="filters__filter" id="filter-country-fieldset">
+					<legend class="filters__filter-legend">Country</legend>
+					<select class="filters__filter-select" id="filter-country" name="country">
+						<option value="">All</option>
+					</select>
+				</fieldset>
+				<div class="filters__reset-btn-wrapper" id="reset-filters-btn">
+					<button class="filters__reset-all-btn" id="reset-filters">
+						Reset Filters
+					</button>
+				</div>
+			</nav>
+
+		</header>
+		<main class="main">
+		</main>
+	</div>
+
+	<script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

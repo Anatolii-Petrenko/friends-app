@@ -1,0 +1,96 @@
+@import 'reset.css';
+@import 'loader.css';
+@import 'filters.css';
+@import 'card.css';
+
+:root {
+  --main-bg-color: #f2e9eb;
+
+  --element-bg-color: #6c9bd9;
+  --element-additional-bg: #f26444;
+
+  --header-bg-color: #6c9bd957;
+
+  --female-cards-bg-color: #f26444;
+  --male-cards-bg-color: #6c9bd9;
+  --female-cards-additional-bg-color: #f23568;
+  --male-cards-additional-bg-color: #8a7ed9;
+}
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+/* States */
+.hidden {
+  display: none;
+}
+/* ------- */
+
+.wrapper {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 16px 24px;
+  background-color: var(--header-bg-color);
+}
+.header__title-container {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header__title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  display: flex;
+}
+.header__title-text-p1 {
+  color: var(--element-bg-color);
+}
+.header__title-text-p2 {
+  color: var(--element-additional-bg);
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  grid-template-rows: 320px;
+  gap: 16px;
+  justify-content: center;
+  grid-auto-rows: 320px;
+}
+.footer {
+  padding: 8px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__text {
+    margin: 10px 0px;
+  }
+  .header__title-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

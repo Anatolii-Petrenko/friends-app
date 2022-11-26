@@ -1,0 +1,60 @@
+.loader-container,
+.loading-error-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  background-color: var(--main-bg-color);
+}
+
+.loader {
+  border: 16px solid #f26444;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loading-error__smile {
+  font-size: 4rem;
+}
+.loading-error__text {
+  margin-top: 12px;
+  font-size: 2rem;
+}
+.loading-error__additional-text {
+  margin-top: 12px;
+}
+.loading-error__refresh-link {
+  margin-top: 20vh;
+  font-size: 2rem;
+}
+
+.loading-error__smile,
+.loading-error__text,
+.loading-error__refresh-link {
+  color: var(--element-bg-color);
+}
